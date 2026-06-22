@@ -2,11 +2,11 @@
   <img src="assets/p3_infographic.png" alt="P3: A Framework for Predicting Protein-Protein Interactions Using Large Language Models" width="100%">
 </p>
 
-<h1 align="center">P3: A Framework for Predicting Protein-Protein Interactions Using Large Language Models</h1>
+<!-- <h1 align="center">P3: A Framework for Predicting Protein-Protein Interactions Using Large Language Models</h1>
 
 <p align="center">
   <em>A fine-tuned, transformer-based pipeline that treats protein sequences as language to predict direct and indirect protein-protein interactions with high accuracy and generalizability.</em>
-</p>
+</p> -->
 
 <p align="center">
   <a href="https://doi.org/10.21203/rs.3.rs-6309474/v1"><img src="https://img.shields.io/badge/Research%20Square-View%20Preprint-orange" alt="Preprint"></a>
