@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/p3-banner.png" alt="P3: A Framework for Predicting Protein-Protein Interactions Using Large Language Models" width="100%">
+  <img src="assets/p3_infographic.png" alt="P3: A Framework for Predicting Protein-Protein Interactions Using Large Language Models" width="100%">
 </p>
 
 <h1 align="center">P3: A Framework for Predicting Protein-Protein Interactions Using Large Language Models</h1>
