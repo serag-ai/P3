@@ -26,9 +26,6 @@ This repository contains the code and pipeline introduced in our paper:
 > *Research Square* preprint (2025). Posted 22 May 2025.
 > [Read the preprint on Research Square](https://doi.org/10.21203/rs.3.rs-6309474/v1)
 
-<p align="center">
-  <img src="assets/intro.png" alt="Overview of the P3 pipeline: data collection, labeling, verification, preprocessing, fine-tuning, and prediction." width="800px">
-</p>
 
 ## Key Features
 
