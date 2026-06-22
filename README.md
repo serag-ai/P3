@@ -37,70 +37,6 @@ This repository contains the code and pipeline introduced in our paper:
 - **Baseline Comparison:** Benchmarks the fine-tuned model against a standalone Random Forest classifier trained with XGBoost.
 - **Scales With Data:** Demonstrates significant performance gains when moving from an initial dataset (~75,000 fragment pairs) to a full dataset (over 1.3 million pairs).
 
-## Repository Structure
-
-- **Fine-tuning pipeline** — Data collection, labeling, verification, preprocessing, fine-tuning, and prediction stages (see Figure 1 in the paper).
-- **Tokenization module** — ProtBERT-based encoding of protein sequences into amino-acid-level and pooled embeddings.
-- **Model training scripts** — DistilBERT fine-tuning on labeled PPI fragment-pair data (trained on an NVIDIA A100 GPU).
-- **Baseline classifier** — Random Forest model trained with XGBoost for comparison.
-- **`data/`** — AVA-seq fragment-pair statistical data (logFC, FDR); not redistributed due to data-sharing terms (available on reasonable request).
-
-## Installation
-
-```bash
-git clone https://github.com/serag-ai/P3.git
-cd P3
-
-python -m venv p3-env
-# Windows
-p3-env\Scripts\activate
-# Linux / macOS
-source p3-env/bin/activate
-
-pip install -r requirements.txt
-```
-
-## Usage
-
-### Data Preparation
-
-Fragment pairs are classified as interacting or non-interacting using the following thresholds, derived from edgeR/Fisher's exact test statistics:
-
-```python
-# A fragment pair is labeled "interacting" if:
-# logFC > 1.5 AND FDR < 0.05
-
-interacting = (logFC > 1.5) and (FDR < 0.05)
-```
-
-### Tokenization and Embedding
-
-Protein sequences are tokenized with ProtBERT prior to fine-tuning:
-
-```python
-# Tokenize a protein sequence with positional encoding
-tokens = protbert_tokenizer("SEQ")
-
-# Generate context-aware embeddings from the last hidden state
-embeddings = protbert_model(tokens).last_hidden_state
-
-# Pool along the sequence length for a fixed-size, protein-level embedding
-pooled_embedding = global_average_pool(embeddings)
-```
-
-### Fine-Tuning and Prediction
-
-```python
-# Fine-tune DistilBERT on labeled fragment-pair data
-model = fine_tune_distilbert(train_data, val_data, epochs=..., gpu="A100")
-
-# Predict whether two protein fragments interact
-predict_interaction(model, fragment_a="NP_206803.1:31", fragment_b="NP_207511.1:241")
-
-# Evaluate on held-out test data
-evaluate(model, test_data)
-```
-
 ## Results
 
 | Dataset | Model | Accuracy (%) | Recall (%) | Precision (%) | F1-score (%) |
@@ -139,6 +75,8 @@ If you use P3 or this code in your research, please cite:
   note    = {Preprint}
 }
 ```
+
+## Code (Coming Soon...)
 
 ## Acknowledgements
 
